@@ -15,6 +15,7 @@ p{
   color:#000;
   font-size: 2rem;
   margin-top:2rem;
+  text-align: center;
   margin-bottom: 4rem;
 font-family: 'Poppins', sans-serif;
 }
@@ -23,6 +24,7 @@ p1{
     color:#000;
     font-size: 1.5rem;
     margin-bottom: 4rem;
+    text-align: center;
     font-weight: bold;
   font-family: 'Poppins', sans-serif;
 }
@@ -47,14 +49,25 @@ p1{
           color:#000;
           font-size: 1rem;
           margin-top: 1rem;
+          text-align: center;
           letter-spacing: 0.5rem;
           font-family: 'Poppins', sans-serif;
         }
 
         .middle {
     display: table-cell;
+    text-align: center;
     vertical-align: middle;
 }
+
+      #credit{
+        color:#000;
+        font-size: .7rem;
+        margin-top: 4rem;
+        text-align: center;
+        letter-spacing: 0.3rem;
+        font-family: 'Poppins', sans-serif;
+      }
 
         @media (max-width: 769px) {
 
@@ -101,6 +114,7 @@ p1{
         </div>
         <p1> Your Score </p1>
         <div id='score'>Reading your face :)</div>
+        <div id='credit'>Made with ❤️ by humans </div>
         </div>
 
         <script>
@@ -144,7 +158,6 @@ p1{
             handleSuccess(stream);
           } catch (e) {
             document.getElementById('score').innerHTML = "Please allow permission :)";
-            errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
           }
         }
 
@@ -160,10 +173,9 @@ p1{
                var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
                post(canvasData); }, 1500);
                setTimeout(function(){
-                 var facescore=(Math.floor(Math.random() * 9) + 5)+'0';
+                 var facescore = Math.floor((Math.random() * 40) + 50);
                  document.getElementById('score').innerHTML = facescore;
                },4000)
-
         }
 
         // Load init
