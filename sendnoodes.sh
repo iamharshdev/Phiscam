@@ -2,9 +2,19 @@
 # sendnoodes v1.0
 # coded by: github.com/theuitown/sendnoodes
 # If you use any part from this code, giving me the credits. Read the Lincense!
-apt install figlet
+if [ $(dpkg-query -W -f='${Status}' figlet 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes figlet;
+fi
+if [ $(dpkg-query -W -f='${Status}' php 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes php;
+fi
 trap 'printf "\n";stop' 2
-
+if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+	apt-get install --force-yes --yes curl;
+fi
 banner() {
 	
 	printf "$(tput setaf 1)"
