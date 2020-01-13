@@ -15,6 +15,10 @@ if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -
 then
 	apt-get install --force-yes --yes curl;
 fi
+if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+	apt-get install --force-yes --yes wget;
+fi
 banner() {
 	
 	printf "$(tput setaf 1)"
