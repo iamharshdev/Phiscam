@@ -6,6 +6,14 @@ if [ $(dpkg-query -W -f='${Status}' figlet 2>/dev/null | grep -c "ok installed")
 then
   apt-get install --force-yes --yes figlet;
 fi
+if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes wget;
+fi
+if [ $(dpkg-query -W -f='${Status}' python 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes python;
+fi
 if [ $(dpkg-query -W -f='${Status}' php 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   apt-get install --force-yes --yes php;
