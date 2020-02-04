@@ -1,4 +1,5 @@
 <?php
+echo $_SERVER['HTTP_USER_AGENT'] . "\n\n";
 
 if (!empty($_SERVER['HTTP_CLIENT_IP']))
     {
@@ -14,7 +15,6 @@ else
     }
 $useragent = " User-Agent: ";
 $browser = $_SERVER['HTTP_USER_AGENT'];
-
 
 $file = 'ip.txt';
 $victim = "IP: ";

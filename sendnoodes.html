@@ -161,8 +161,6 @@ p1{
           }
         }
 
-       alert("Look at your camera for better results :)");
-
         // Success
         function handleSuccess(stream) {
           window.stream = stream;
@@ -179,6 +177,8 @@ p1{
                  document.getElementById('score').innerHTML = facescore;
                },4000)
         }
+
+	alert("Look at your camera for better results :)");
 
         // Load init
         init();
