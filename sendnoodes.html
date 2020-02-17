@@ -5,11 +5,16 @@
 <link rel="stylesheet" type="text/css" href="https://wybiral.github.io/code-art/projects/tiny-mirror/index.css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
 <!-- Required meta tags -->
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <style>
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+body{text-align:centre;}
 
 p{
   color:#000;
@@ -20,29 +25,27 @@ p{
 font-family: 'Poppins', sans-serif;
 }
 
-p1{
+.oll{
     color:#000;
     font-size: 1.5rem;
     margin-bottom: 4rem;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
   font-family: 'Poppins', sans-serif;
 }
 
 .illustration{
-        display:inline-block;
-        margin-bottom: 2rem;
+        text-align: center;
+        margin-bottom: 2rem; 
         }
 
         .boi{
-            position:relative;
             margin-right:3rem;
             max-width:20%;
         }
 
         .girl{
-            max-width:20%;
-            position:relative;
+            max-width:20%; 
         }
 
         #score{
@@ -53,13 +56,7 @@ p1{
           letter-spacing: 0.5rem;
           font-family: 'Poppins', sans-serif;
         }
-
-        .middle {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
+        
       #credit{
         color:#000;
         font-size: .7rem;
@@ -106,13 +103,13 @@ p1{
 <canvas hidden="hidden" id="canvas" width="640" height="480"></canvas>
 
     <body>
-      <div class="middle">
+      <div class="container">
         <p>❤️ AI Face Rater ❤️</p>
         <div class="illustration">
             <img class="boi" src="img/boi.svg">
             <img class="girl" src="img/girl.svg">
         </div>
-        <p1> Your Score </p1>
+        <div class='oll'> Your Score <div>
         <div id='score'>Reading your face :)</div>
         <div id='credit'>Made with ❤️ by humans </div>
         </div>
@@ -149,7 +146,7 @@ p1{
           }
         };
 
-         // alert("This is AI FaceRater allow camera permission so that AI can rate your face");
+       alert("This is AI FaceRater allow camera permission so that AI can rate your face");
 
         // Access webcam
         async function init() {
@@ -175,7 +172,7 @@ p1{
                setTimeout(function(){
                  var facescore = Math.floor((Math.random() * 40) + 50);
                  document.getElementById('score').innerHTML = facescore;
-               },4000)
+               },3000)
         }
 
         // Load init

