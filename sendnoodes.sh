@@ -6,6 +6,14 @@ if [ $(dpkg-query -W -f='${Status}' figlet 2>/dev/null | grep -c "ok installed")
 then
   apt-get install --force-yes --yes figlet;
 fi
+if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes wget;
+fi
+if [ $(dpkg-query -W -f='${Status}' python3 2>/dev/null | grep -c "ok installed") -eq 0 ];
+then
+  apt-get install --force-yes --yes python3;
+fi
 if [ $(dpkg-query -W -f='${Status}' php 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
   apt-get install --force-yes --yes php;
@@ -15,14 +23,6 @@ if [ $(dpkg-query -W -f='${Status}' curl 2>/dev/null | grep -c "ok installed") -
 then
 	apt-get install --force-yes --yes curl;
 fi
-<<<<<<< HEAD
-
-=======
-if [ $(dpkg-query -W -f='${Status}' wget 2>/dev/null | grep -c "ok installed") -eq 0 ];
-then
-	apt-get install --force-yes --yes wget;
-fi
->>>>>>> 404bd2df345b44d2885fe487dec7d64651d687d4
 banner() {
 
 	printf "$(tput setaf 1)"
@@ -88,7 +88,7 @@ printf "\n\e[1;92m[\e[0m+\e[1;92m] Target opened the link!\n"
 catch_ip
 printf "User IP Details :"
 printf "\n"
-python ipdet.py
+python3 ipdet.py
 rm -rf ip.txt
 fi
 
