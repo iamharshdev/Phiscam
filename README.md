@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SendNOOdes :fire:
 SendNoodes is a bash script made using php,html,js and it fools the victim that it's a AI Based Face Rater but really it's not so you just have to run this script in your terminal only if you have bash terminal on pc or termux on android and this script will download some requireddependencies and ngrok for hostingthe website on the internet so that you can send that link to your victim as soon as victim opens it you will get his ip listed in your terminal and this script will start taking his/her pics using webcam and it will send pics to your local machine in the same folder where script is located and now you can have fun. Thanks for Using😊
 
@@ -85,4 +84,3 @@ Developer:Me￼([Harsh Vardhan Goswami](https://iamharsh.design/))
 # Contribution 🤗🤗
 
 You can also contribute to this script.Just Fork this to your account and create a pull request with meaningful changes and i will merge it with master.
->>>>>>> a50cc261a4cd5946405e2dbb410ea3d0d0f5e896
