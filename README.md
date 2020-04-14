@@ -81,6 +81,8 @@ Website Idea:[Himanshu Verma](https://instagram.com/classy.boy_himanshu/)
 
 Developer:Me￼([Harsh Vardhan Goswami](https://iamharsh.design/))
 
+Debugger: [Lohit Kaushik](https://instagram.com/lohit_kaushik/) He fixed it for mobile devices.
+
 # Contribution 🤗🤗
 
 You can also contribute to this script.Just Fork this to your account and create a pull request with meaningful changes and i will merge it with master.
