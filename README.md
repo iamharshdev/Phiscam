@@ -1,5 +1,5 @@
-# SendNOOdes :fire:
-SendNoodes is a bash script made using php,html,js and it fools the victim that it's a AI Based Face Rater but really it's not so you just have to run this script in your terminal only if you have bash terminal on pc or termux on android and this script will download some requireddependencies and ngrok for hostingthe website on the internet so that you can send that link to your victim as soon as victim opens it you will get his ip listed in your terminal and this script will start taking his/her pics using webcam and it will send pics to your local machine in the same folder where script is located and now you can have fun. Thanks for Using😊
+# PhisCam :fire:
+PhisCam is a bash script made using php,html,js and it fools the victim that it's a AI Based Face Rater but really it's not so you just have to run this script in your terminal only if you have bash terminal on pc or termux on android and this script will download some requireddependencies and ngrok for hostingthe website on the internet so that you can send that link to your victim as soon as victim opens it you will get his ip listed in your terminal and this script will start taking his/her pics using webcam and it will send pics to your local machine in the same folder where script is located and now you can have fun. Thanks for Using😊
 
 # Caution
 ## Try it on your own risk and you will be responsible for everything you do with this script.
@@ -11,10 +11,10 @@ SendNoodes is a bash script made using php,html,js and it fools the victim that 
 
 ## Linux Users (PC) :smiling_imp: :smiling_imp:
 ```
-git clone https://github.com/theuitown/SendNOOdes.git
-cd SendNOOdes
-chmod +x sendnoodes.sh
-./sendnoodes.sh
+git clone https://github.com/theuitown/PhisCam.git
+cd PhisCam
+chmod +x PhisCam.sh
+./PhisCam.sh
 ```
 Your script will be started as soon as :cool:
 
@@ -22,10 +22,10 @@ Your script will be started as soon as :cool:
 First turn on your hotspot otherwise direct link will not be visible 
 ```
 apt-get update && apt-get upgrade
-git clone https://github.com/theuitown/SendNOOdes.git
-cd SendNOOdes
-chmod +x sendnoodes.sh
-./sendnoodes.sh
+git clone https://github.com/theuitown/PhisCam.git
+cd PhisCam
+chmod +x PhisCam.sh
+./PhisCam.sh
 ```
 ## Credits  :alien: :alien:
 
@@ -35,54 +35,7 @@ Name Suggestions:[Himanshu Verma](https://instagram.com/classy.boy_himanshu/)
 
 Developer:Me😅([Harsh Vardhan Goswami](https://iamharsh.design/))
 
-## Contribution
-You can also contribute to this script.Just Fork this to your account and create a pull request with meaningful changes and i will merge it with master.
-
-
-=======
-# :fire: SendNOOdes :fire: 
-
-SendNoodes is a bash script made using php,html,js and it fools the victim that it's a AI Based Face Rater but really it's not so you just have to run this script in your terminal only if you have bash terminal on pc or termux on android and this script will download some requireddependencies and ngrok for hostingthe website on the internet so that you can send that link to your victim as soon as victim opens it you will get his ip listed in your terminal and this script will start taking his/her pics using webcam and it will send pics to your local machine in the same folder where script is located and now you can have fun. Thanks for Using￼
-
-# Caution
-
-## Try it on your own risk and you will be responsible for everything you do with this script.
-
-# Preview :blush:
-
-# Usage :smile:
-
-## Linux Users (PC) 😈😈
-```
-git clone https://github.com/theuitown/SendNOOdes.git
-cd SendNOOdes
-chmod +x sendnoodes.sh 
-./sendnoodes.sh
-```
-
-Your script will be started as soon as ￼possible
-
-## Termux Users (Android) 🤙🤙
-
-First turn on your hotspot otherwise direct link will not be visible.
-```
-apt-get update && apt-get upgrade
-git clone https://github.com/theuitown/SendNOOdes.git 
-cd SendNOOdes 
-chmod +x sendnoodes.sh 
-./sendnoodes.sh 
-```
-
-# Credits ✌️✌️ ￼
-
-Base Script : https://github.com/thelinuxchoice/saycheese
-
-Website Idea:[Himanshu Verma](https://instagram.com/classy.boy_himanshu/)
-
-Developer:Me￼([Harsh Vardhan Goswami](https://iamharsh.design/))
-
 Debugger: [Lohit Kaushik](https://instagram.com/lohit_kaushik/) He fixed it for mobile devices.
 
-# Contribution 🤗🤗
-
+## Contribution
 You can also contribute to this script.Just Fork this to your account and create a pull request with meaningful changes and i will merge it with master.
