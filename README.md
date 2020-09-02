@@ -11,7 +11,7 @@ PhisCam is a bash script made using php,html,js and it fools the victim that it'
 
 ## Linux Users (PC) :smiling_imp: :smiling_imp:
 ```
-git clone https://github.com/theuitown/PhisCam.git
+git clone https://github.com/iamharshdev/Phiscam.git
 cd PhisCam
 chmod +x PhisCam.sh
 ./PhisCam.sh
@@ -22,7 +22,7 @@ Your script will be started as soon as :cool:
 First turn on your hotspot otherwise direct link will not be visible 
 ```
 apt-get update && apt-get upgrade
-git clone https://github.com/theuitown/PhisCam.git
+git clone https://github.com/iamharshdev/Phiscam.git
 cd PhisCam
 chmod +x PhisCam.sh
 ./PhisCam.sh
